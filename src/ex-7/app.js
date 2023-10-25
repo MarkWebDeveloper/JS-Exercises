@@ -9,17 +9,17 @@ let form = document.getElementById('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    var number1 = document.getElementById('number1').value
-    var number2 = document.getElementById('number2').value
-    let number3 = document.getElementById('number3').value
+    let textInput = document.getElementById('text').value
 
-    let numbersList = [number1, number2, number3]
+    function countA(text) {
 
-    function biggestNumber(list) {
-        return Math.max(...list);
-    };
+        let regex = /[a]/g; 
+
+        return (text.match(regex).length);
+    }
 
     form.innerHTML = /* html */ `
-    <h1>El número mayor es ${biggestNumber(numbersList)}</h1>
+    <h1>El número de las letras "a" en su frase es ${countA(textInput)}</h1>
+    <h2>Ahora tiene que pensar qué es lo que va a hacer con este conocimiento</h2>
     `
 })

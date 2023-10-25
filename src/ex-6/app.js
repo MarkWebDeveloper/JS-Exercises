@@ -10,8 +10,8 @@ let form = document.getElementById("form")
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    var number1 = document.getElementById("number1").value
-    var number2 = document.getElementById("number2").value
+    let number1 = document.getElementById("number1").value
+    let number2 = document.getElementById("number2").value
     let number3 = document.getElementById("number3").value
 
     let numbersList = [number1, number2, number3]
