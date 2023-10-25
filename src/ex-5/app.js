@@ -1,9 +1,4 @@
-// Escribe un programa que pida dos números y escriba “La suma de <numero-uno> con <numero-dos> es <resultado>”.
-
-//Crear variables para cada numero
-//Acceder al DOM
-//Hacer una funcion de calculo
-//Quitar el formulario y poner el resultado
+// Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.
 
 
 let number1 = document.getElementById("number1")
@@ -13,13 +8,27 @@ let form = document.getElementById("form")
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    function sum() {
-        let sumResult = Number(number1.value) + Number(number2.value)
-        return sumResult
+    function compare() {
+        if (Number(number1.value) === Number(number2.value)) {
+            return "The numbers are equal"
+        }
+    
+        if (Number(number1.value) > Number(number2.value)) {
+            return `${number1.value} is greater than ${number2.value}`
+        }
+
+        if (Number(number1.value) < Number(number2.value)) {
+            return `${number2.value} is greater than ${number1.value}`
+        } 
     }
 
+    compare()
+
+    console.log(number1)
+    console.log(typeof number1) 
+
     form.innerHTML = /* html */ `
-    <h1>“La suma de ${number1.value} con ${number2.value} es ${sum()}”</h1>
+    <h1>${compare()}</h1>
     `;
 })
         
