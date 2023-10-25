@@ -1,5 +1,9 @@
 // Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.
 
+//Crear variables para cada numero
+//Acceder al DOM
+//Hacer una funcion de comparacion
+//Quitar el formulario y poner el resultado
 
 let number1 = document.getElementById("number1")
 let number2 = document.getElementById("number2")
@@ -10,15 +14,15 @@ form.addEventListener("submit", (e) => {
 
     function compare() {
         if (Number(number1.value) === Number(number2.value)) {
-            return "The numbers are equal"
+            return "Los números son iguales"
         }
     
         if (Number(number1.value) > Number(number2.value)) {
-            return `${number1.value} is greater than ${number2.value}`
+            return `${number1.value} es mayor que ${number2.value}`
         }
 
         if (Number(number1.value) < Number(number2.value)) {
-            return `${number2.value} is greater than ${number1.value}`
+            return `${number2.value} es mayor que ${number1.value}`
         } 
     }
 
