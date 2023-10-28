@@ -1,25 +1,47 @@
-// Escribe un programa que pida una frase y escriba cuantas veces aparece la letra a
+// Escribe un programa que pida una frase y escriba las vocales que aparecen
 
 //Acceder al formulario
 //Hacer una funcion de conteo de las letras
-//Quitar el formulario y poner la cantidad de las letras "a"
+//Quitar el formulario y poner la cantidad de las vocales
 
-let form = document.getElementById('form')
+function app() {
+    getForm()
+    eventListener()
+}
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+function getText() {
     let textInput = document.getElementById('text').value
+    return textInput
+}
 
-    function countA(text) {
+function getForm() {
+    let form = document.getElementById('form')
+    return form
+}
 
-        let regex = /[a]/g; 
+function getVowels() {
+    let vowCount = getText().match(/[aeiou]/gi)
+    return vowCount === null ? 0 : vowCount.length
+}
 
-        return (text.match(regex).length);
-    }
-
+function onSubmit(event) {
+    event.preventDefault();
+    getText()
+    getVowels()
     form.innerHTML = /* html */ `
-    <h1>El número de las letras "a" en su frase es ${countA(textInput)}</h1>
-    <h2>Ahora tiene que pensar qué es lo que va a hacer con este conocimiento</h2>
+    <h1>El número de las vocales en su frase es ${getVowels()}</h1>
+    <h2>Pues, eso... Ahora lo sabes.</h2>
     `
-})
+}
+
+function eventListener() {
+    form.addEventListener('submit', onSubmit)
+}
+
+app()
+
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+
+    
+// })
