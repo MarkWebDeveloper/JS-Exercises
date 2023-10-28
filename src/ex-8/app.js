@@ -26,6 +26,7 @@ function showVowels() {
         return "Ay-yay. No hay vocales allí"
     } else {
         let aCheck = getText().match(/[a]/gi)
+        
     let aCount = aCheck === null ? 0 : aCheck.length 
     let eCheck = getText().match(/[e]/gi)
     let eCount = eCheck === null ? 0 : eCheck.length
