@@ -6,7 +6,7 @@
 
 function app() {
     getForm()
-    eventListener()
+    submitListener()
 }
 
 function getText() {
@@ -34,7 +34,7 @@ function onSubmit(event) {
     `
 }
 
-function eventListener() {
+function submitListener() {
     form.addEventListener('submit', onSubmit)
 }
 
