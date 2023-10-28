@@ -1,0 +1,13 @@
+form {
+    width: 100%;
+    text-align: center;
+}
+
+#text {
+    width: 50%;
+    height: 3rem;
+}
+
+h2 {
+    font-size: 16px;
+}
