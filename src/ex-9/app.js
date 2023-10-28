@@ -19,7 +19,7 @@ function getForm() {
     return form
 }
 
-function getVowels() {
+function countVowels() {
     let vowCount = getText().match(/[aeiou]/gi)
     return vowCount === null ? 0 : vowCount.length
 }
@@ -27,9 +27,9 @@ function getVowels() {
 function onSubmit(event) {
     event.preventDefault();
     getText()
-    getVowels()
+    countVowels()
     form.innerHTML = /* html */ `
-    <h1>El número de las vocales en su frase es ${getVowels()}</h1>
+    <h1>El número de las vocales en su frase es ${countVowels()}</h1>
     <h2>Pues, eso... Ahora lo sabes.</h2>
     `
 }
