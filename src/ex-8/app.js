@@ -68,7 +68,7 @@ function showVowels() {
 
     uniqueVowels = `${a} ${e} ${i} ${o} ${u}`
 
-    return `Las vocales en su frase son ${uniqueVowels}`
+    return `Las vocales únicas en su frase son: ${uniqueVowels}`
     }
 }
 
@@ -87,9 +87,3 @@ function submitListener() {
 }
 
 app()
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-    
-// })
