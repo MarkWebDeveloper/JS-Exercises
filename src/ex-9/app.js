@@ -39,9 +39,3 @@ function submitListener() {
 }
 
 app()
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-    
-// })
