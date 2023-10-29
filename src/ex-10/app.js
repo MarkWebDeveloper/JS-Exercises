@@ -19,7 +19,7 @@ function getForm() {
     return form
 }
 
-function showVowelsAnd() {
+function showVowelsAndNumb() {
     let vowCount = getText().match(/[aeiou]/gi)
 
     if (vowCount === null) {
@@ -37,35 +37,11 @@ function showVowelsAnd() {
     let uCheck = getText().match(/[u]/gi)
     let uCount = uCheck === null ? 0 : uCheck.length
 
-    if (aCount >= 1) {
-        a = `a(${aCount}) `
-    } else {
-        a = ''
-    }
-    
-    if (eCount >= 1) {
-        e = `e(${eCount}) `
-    } else {
-        e = ''
-    }
-    
-    if (iCount >= 1) {
-        i = `i(${iCount}) `
-    } else {
-        i = ''
-    }
-    
-    if (oCount >= 1) {
-        o = `o(${oCount}) `
-    } else {
-        o = ''
-    }
-
-    if (uCount >= 1) {
-        u = `u(${uCount}) `
-    } else {
-        u = ''
-    }
+    let a = aCount >= 1 ? `a(${aCount}) ` : ''
+    let e = eCount >= 1 ? `e(${eCount}) ` : ''
+    let i = iCount >= 1 ? `i(${iCount}) ` : ''
+    let o = oCount >= 1 ? `o(${oCount}) ` : ''
+    let u = uCount >= 1 ? `u(${uCount}) ` : ''
 
     return `Las vocales que aparecen en su frase son: ${a}${e}${i}${o}${u}`
     }
@@ -74,9 +50,9 @@ function showVowelsAnd() {
 function onSubmit(event) {
     event.preventDefault();
     getText()
-    showVowelsAnd()
+    showVowelsAndNumb()
     form.innerHTML = /* html */ `
-    <h1>${showVowelsAnd()}</h1>
+    <h1>${showVowelsAndNumb()}</h1>
     <h2>Ahora puedes dormir tranquilo</h2>
     `
 }
