@@ -1,4 +1,4 @@
-// Escribe un programa que pida una frase y escriba las vocales que aparecen
+// Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de las vocales
 
 //Acceder al formulario
 //Hacer una funcion de conteo de las letras

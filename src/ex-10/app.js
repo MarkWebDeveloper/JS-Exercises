@@ -1,8 +1,8 @@
 // Escribe un programa que pida una frase y escriba las vocales que aparecen
 
-//Acceder al formulario
-//Hacer una funcion de conteo de las letras
-//Quitar el formulario y poner la cantidad de las vocales
+//Acceder al formulario.
+//Modificar un poco el ejericio 8. La función tiene que ser casi la misma.
+//Quitar el formulario y poner la cantidad de cada una de las vocales.
 
 function app() {
     getForm()
@@ -19,7 +19,7 @@ function getForm() {
     return form
 }
 
-function showVowels() {
+function showVowelsAnd() {
     let vowCount = getText().match(/[aeiou]/gi)
 
     if (vowCount === null) {
@@ -38,48 +38,46 @@ function showVowels() {
     let uCount = uCheck === null ? 0 : uCheck.length
 
     if (aCount >= 1) {
-        a = 'a'
+        a = `a(${aCount}) `
     } else {
-        a = ""
+        a = ''
     }
     
     if (eCount >= 1) {
-        e = 'e'
+        e = `e(${eCount}) `
     } else {
-        e = ""
+        e = ''
     }
     
     if (iCount >= 1) {
-        i = 'i'
+        i = `i(${iCount}) `
     } else {
-        i = ""
+        i = ''
     }
     
     if (oCount >= 1) {
-        o = 'o'
+        o = `o(${oCount}) `
     } else {
-        o = ""
+        o = ''
     }
 
     if (uCount >= 1) {
-        u = 'u'
+        u = `u(${uCount}) `
     } else {
-        u = ""
+        u = ''
     }
 
-    uniqueVowels = `${a} ${e} ${i} ${o} ${u}`
-
-    return `Las vocales únicas en su frase son: ${uniqueVowels}`
+    return `Las vocales que aparecen en su frase son: ${a}${e}${i}${o}${u}`
     }
 }
 
 function onSubmit(event) {
     event.preventDefault();
     getText()
-    showVowels()
+    showVowelsAnd()
     form.innerHTML = /* html */ `
-    <h1>${showVowels()}</h1>
-    <h2>¿Pensabas que no lo íba a saber?</h2>
+    <h1>${showVowelsAnd()}</h1>
+    <h2>Ahora puedes dormir tranquilo</h2>
     `
 }
 
