@@ -1,17 +1,17 @@
-// Escribe un programa que pida una frase y escriba las vocales que aparecen
+// Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro
 
 //Acceder al formulario.
-//Modificar un poco el ejericio 8. La función tiene que ser casi la misma.
-//Quitar el formulario y poner la cantidad de cada una de las vocales.
+//Crear varios condicionales if con % por cada de los numeros.
+//Quitar el formulario y poner la primera condicion que se cumpla.
 
 function app() {
     getForm()
     submitListener()
 }
 
-function getText() {
-    let textInput = document.getElementById('text').value
-    return textInput
+function getNumber() {
+    let numberInput = document.getElementById('number').value
+    return numberInput
 }
 
 function getForm() {
@@ -19,41 +19,27 @@ function getForm() {
     return form
 }
 
-function showVowelsAndNumb() {
-    let vowCount = getText().match(/[aeiou]/gi)
-
-    if (vowCount === null) {
-        return "Ay-yay. No hay vocales allí"
+function checkIfDivisible() {
+    if (getNumber() % 2 == 0) {
+        return 'Your number is divisible by 2'
+    } else if (getNumber() % 3 == 0) {
+        return 'Your number is divisible by 3'
+    } else if (getNumber() % 5 == 0) {
+        return 'Your number is divisible by 5'
+    } else if (getNumber() % 7 == 0) {
+        return 'Your number is divisible by 7'
     } else {
-        let aCheck = getText().match(/[a]/gi)
-        
-    let aCount = aCheck === null ? 0 : aCheck.length 
-    let eCheck = getText().match(/[e]/gi)
-    let eCount = eCheck === null ? 0 : eCheck.length
-    let iCheck = getText().match(/[i]/gi)
-    let iCount = iCheck === null ? 0 : iCheck.length
-    let oCheck = getText().match(/[o]/gi) 
-    let oCount = oCheck === null ? 0 : oCheck.length
-    let uCheck = getText().match(/[u]/gi)
-    let uCount = uCheck === null ? 0 : uCheck.length
-
-    let a = aCount >= 1 ? `a(${aCount}) ` : ''
-    let e = eCount >= 1 ? `e(${eCount}) ` : ''
-    let i = iCount >= 1 ? `i(${iCount}) ` : ''
-    let o = oCount >= 1 ? `o(${oCount}) ` : ''
-    let u = uCount >= 1 ? `u(${uCount}) ` : ''
-
-    return `Las vocales que aparecen en su frase son: ${a}${e}${i}${o}${u}`
+        return 'Your number is not divisible by 2, 3, 5 or 7'
     }
 }
 
 function onSubmit(event) {
     event.preventDefault();
-    getText()
-    showVowelsAndNumb()
+    getNumber()
+    checkIfDivisible()
     form.innerHTML = /* html */ `
-    <h1>${showVowelsAndNumb()}</h1>
-    <h2>Ahora puedes dormir tranquilo</h2>
+    <h1>${checkIfDivisible()}</h1>
+    <h2>Por cierto, ¿no lo podías calcular tú mismo?</h2>
     `
 }
 
