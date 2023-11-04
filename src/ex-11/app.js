@@ -21,15 +21,15 @@ function getForm() {
 
 function checkIfDivisible() {
     if (getNumber() % 2 == 0) {
-        return 'Your number is divisible by 2'
+        return 'Su número es divisible por 2'
     } else if (getNumber() % 3 == 0) {
-        return 'Your number is divisible by 3'
+        return 'Su número es divisible por 3'
     } else if (getNumber() % 5 == 0) {
-        return 'Your number is divisible by 5'
+        return 'Su número es divisible por 5'
     } else if (getNumber() % 7 == 0) {
-        return 'Your number is divisible by 7'
+        return 'Su número es divisible por 7'
     } else {
-        return 'Your number is not divisible by 2, 3, 5 or 7'
+        return 'Su número no es divisible por 2, 3, 5 o 7'
     }
 }
 
