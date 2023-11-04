@@ -66,7 +66,6 @@ function onSubmit(event) {
     getNotUnique()
     deleteDuplicates()
     composeStringFromArray()
-    console.log(numbersString)
 
     if (stringArray.length === 0) {
         form.innerHTML = /* html */ `
