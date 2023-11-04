@@ -11,7 +11,7 @@ const mathStringDiv = document.getElementById('math_string')
 
 function printString() {
     mathStringDiv.innerHTML = /* html */ `
-        <p>${text}</p>
+        <h1>${text}</h1>
     `
 }
 
